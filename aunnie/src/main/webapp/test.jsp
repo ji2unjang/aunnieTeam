@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	이건 테스트
+	<h2>이건 테스트야</h2>
 </body>
 </html>
