@@ -9,8 +9,6 @@ public class PaymentDTO {
 	private String payment_type;
 	private int order_no;
 	
-
-	
 	public PaymentDTO() {
 		super();
 	}
