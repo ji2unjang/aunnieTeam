@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class PaymentDTO {
 	private int payment_no;
-	private Date payment_date;
+	private Date payment_date; 
 	private int payment_pay;
 	private String payment_type;
 	private int order_no;
