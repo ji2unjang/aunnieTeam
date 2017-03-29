@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
+  <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-<mapper namespace="com.aunnie.member">
-	<select id="selectAll">
+  <mapper namespace="com.aunnie.member">
+	<select id="selectAll" resultType="member">
 		select member_no,id from member
 	</select>
-</mapper>
+  </mapper>
