@@ -1,5 +1,7 @@
 package com.aunnie.web.control;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,20 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.aunnie.web.dao.MemberDAO;
 import com.aunnie.web.dao.MemberOracleDAO;
+import com.aunnie.web.service.MemberService;
 
 @Controller
 public class MemberController {
 
 	private static final Logger log = LoggerFactory.getLogger(MemberController.class);
 	
-	@Autowired
-	MemberDAO dao;
+	@Resource(name="memberService")
+	private MemberService service;
 	
 	
 	@RequestMapping("/memberList")
-	
 	public ModelAndView list(){
-		System.out.println("Dao : " + dao);
-		return new ModelAndView("list","list",dao.selectAll());
+		return new ModelAndView("list","list",service.getAll());
 	}
 }
