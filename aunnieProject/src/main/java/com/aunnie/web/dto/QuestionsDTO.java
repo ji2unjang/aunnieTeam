@@ -1,6 +1,6 @@
 package com.aunnie.web.dto;
 
-public class QuestionDTO {
+public class QuestionsDTO {
 	private int q_no;
 	private String q_type;
 	private String q_date;
@@ -11,11 +11,11 @@ public class QuestionDTO {
 	private int member_no;
 	private int order_no;
 	
-	public QuestionDTO() {
+	public QuestionsDTO() {
 
 	}
 	
-	public QuestionDTO(int q_no, String q_type, String q_date, String q_contents, String a_contents, String a_date,
+	public QuestionsDTO(int q_no, String q_type, String q_date, String q_contents, String a_contents, String a_date,
 			int product_no, int member_no, int order_no) {
 		super();
 		this.q_no = q_no;
