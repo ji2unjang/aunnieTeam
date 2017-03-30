@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.aunnie.mirrorTalk">
+  	<select id="selectAll" resultType="talk">
+  		SELECT talk_no, t_like, t_views, t_title, t_writer_no, t_contents, t_img_path
+  		FROM mirror_talk
+  	</select>
+  	
+  	<select id="selectOne" resultType="talk" parameterType="int">
+  		SELECT talk_no, t_like, t_views, t_title, t_writer_no, t_contents, t_img_path
+  		FROM mirror_talk
+  		WHERE talk_no = #{talk_no}
+  	</select>
+  	
+  	<insert id="insertOne" parameterType="talk">
+  		INSERT INTO mirror_talk
+  		VALUES(seq_mirrortalk_no.nextval, 0, 0, #{t_title}, #{t_writer_no}, #{t_contents}, #{t_img_path})
+  	</insert>
+  	<update id="updateOne" parameterType="event">
+  		UPDATE mirror_talk
+  		SET t_title = #{t_title}, t_contents = #{t_contents}, t_img_path = #{t_img_path}
+  		WHERE talk_no = #{talk_no}
+  	</update>
+  	
+  	<delete id="deleteOne" parameterType="int">
+  		DELETE mirror_talk
+  		WHERE talk_no = #{talk_no}
+  	</delete>
+  </mapper>
