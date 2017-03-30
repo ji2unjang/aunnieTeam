@@ -21,26 +21,26 @@ public class QuestionsOracleDAO implements QuestionsDAO{
 	}
 
 	@Override
-	public QuestionsDTO selectOne(int no) {
+	public QuestionsDTO selectOne(int q_no) {
 		
-		return session.selectOne("com.aunnie.question.selectOne",no);
+		return session.selectOne("com.aunnie.questions.selectOne",q_no);
 	}
 
 	@Override
-	public void insertOne(QuestionsDTO dto) {
-		session.insert("com.aunnie.question.insertOne",dto);
-		
-	}
-
-	@Override
-	public void updateOne(QuestionsDTO dto) {
-		session.update("com.aunnie.question.updateOne",dto);
+	public void insertOne(QuestionsDTO qdto) {
+		session.insert("com.aunnie.questions.insertOne",qdto);
 		
 	}
 
 	@Override
-	public void deleteOne(int no) {
-		session.delete("com.aunnie.question.deleteOne",no);
+	public void updateOne(QuestionsDTO qdto) {
+		session.update("com.aunnie.questions.updateOne",qdto);
+		
+	}
+
+	@Override
+	public void deleteOne(int q_no) {
+		session.delete("com.aunnie.questions.deleteOne",q_no);
 			
 	}
 

@@ -6,8 +6,8 @@ import com.aunnie.web.dto.QuestionsDTO;
 
 public interface QuestionsDAO {
 	public List<QuestionsDTO> selectAll();
-	public QuestionsDTO selectOne(int no);
-	public void insertOne(QuestionsDTO dto);
-	public void updateOne(QuestionsDTO dto);
-	public void deleteOne(int no);
+	public QuestionsDTO selectOne(int q_no);
+	public void insertOne(QuestionsDTO qdto);
+	public void updateOne(QuestionsDTO qdto);
+	public void deleteOne(int q_no);
 }

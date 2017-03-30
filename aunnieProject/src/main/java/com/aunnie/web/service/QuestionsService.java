@@ -6,9 +6,9 @@ import com.aunnie.web.dto.QuestionsDTO;
 
 public interface QuestionsService {
 	public List<QuestionsDTO> getAll();
-	public QuestionsDTO getOne(int no);
-	public void writeOne(QuestionsDTO dto);
-	public void modifyOne(QuestionsDTO dto);
-	public void deleteOne(int no);
+	public QuestionsDTO readOne(int q_no);
+	public void writeOne(QuestionsDTO qdto);
+	public void modifyOne(QuestionsDTO qdto);
+	public void deleteOne(int q_no);
 	
 }

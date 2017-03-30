@@ -23,27 +23,27 @@ public class QuestionsServiceImple implements QuestionsService{
 	}
 
 	@Override
-	public QuestionsDTO getOne(int no) {
+	public QuestionsDTO readOne(int q_no) {
 		// TODO Auto-generated method stub
-		return dao.selectOne(no);
+		return dao.selectOne(q_no);
 	}
 
 	@Override
-	public void writeOne(QuestionsDTO dto) {
+	public void writeOne(QuestionsDTO qdto) {
 		// TODO Auto-generated method stub
-		dao.insertOne(dto);
+		dao.insertOne(qdto);
 	}
 
 	@Override
-	public void modifyOne(QuestionsDTO dto) {
+	public void modifyOne(QuestionsDTO qdto) {
 		// TODO Auto-generated method stub
-		dao.updateOne(dto);
+		dao.updateOne(qdto);
 	}
 
 	@Override
-	public void deleteOne(int no) {
+	public void deleteOne(int q_no) {
 		// TODO Auto-generated method stub
-		dao.deleteOne(no);
+		dao.deleteOne(q_no);
 	}
 
 }

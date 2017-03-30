@@ -7,13 +7,11 @@
   	<select id="selectAll" resultType="qdto">
 	select 
 	q_no, q_type, q_date, q_contents, a_contents, a_date, product_no, member_no, order_no
-	 from QUESTIONS
-		order by q_date desc
+	 from QUESTIONS	order by q_date desc
 	</select>
 	<select id="selectOne" resultType="qdto" parameterType="int">
 	select 
 	q_no, q_type, q_date, q_contents, a_contents, a_date, product_no, member_no, order_no
-	 from QUESTIONS
 	from QUESTIONS where q_no = #{q_no}
 	</select>
 
