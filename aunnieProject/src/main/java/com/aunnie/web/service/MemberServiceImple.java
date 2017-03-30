@@ -19,4 +19,24 @@ public class MemberServiceImple implements MemberService{
 		return dao.selectAll();
 	}
 
+	@Override
+	public MemberDTO readOne(int no) {
+		return dao.selectOne(no);
+	}
+
+	@Override
+	public void writeOne(MemberDTO dto) {
+		dao.insertOne(dto);
+	}
+
+	@Override
+	public void modifyOne(MemberDTO dto) {
+		dao.updateOne(dto);
+	}
+
+	@Override
+	public void removeOne(int no) {
+		dao.deleteOne(no);
+	}
+
 }

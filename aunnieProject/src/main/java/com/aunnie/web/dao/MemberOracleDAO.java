@@ -18,9 +18,27 @@ public class MemberOracleDAO implements MemberDAO{
 
 	@Override
 	public List<MemberDTO> selectAll() {
-		
-		System.out.println("session : "+ session);
 		return session.selectList("com.aunnie.member.selectAll");
+	}
+
+	@Override
+	public MemberDTO selectOne(int no) {
+		return session.selectOne("com.aunnie.member.selectOne");
+	}
+
+	@Override
+	public void insertOne(MemberDTO dto) {
+		session.insert("com.aunnie.member.insertOne",dto);
+	}
+
+	@Override
+	public void updateOne(MemberDTO dto) {
+		session.update("com.aunnie.member.updateOne",dto);
+	}
+
+	@Override
+	public void deleteOne(int no) {
+		session.update("com.aunnie.member.deleteOne",no);
 	}
 	
 }

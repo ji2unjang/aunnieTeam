@@ -4,6 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.aunnie.member">
 	<select id="selectAll" resultType="member">
-		select member_no,id from member
+		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
 	</select>
+	<select id="selectOne" resultType="member" parameterType="int">
+		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
+		WHERE member_no= #{member_no}
+	</select>
+	<insert id="insertOne" parameterType="member">
+		INSERT INTO MEMBER VALUES(seq_member_no.nextval,#{id},#{pw},#{name},#{nickname},#{email},#{phone},#{address},
+		#{birthday},#{regdate},#{mileage},#{total_price},#{degree})
+	</insert>
+	<update id="updateOne" parameterType="member">
+		UPDATE MEMBER SET(id=#{id},pw=#{pw},name=#{name},nickname=#{nickname},email=#{email},phone=#{phone},address=#{address},
+		birthday=#{birthday},regdate=#{regdate},mileage=#{mileage},total_price=#{total_price},degree=#{degree})
+	</update>
   </mapper>
