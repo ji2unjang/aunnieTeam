@@ -16,7 +16,6 @@ public class ProductOptionOracleDAO implements ProductOptionDAO{
 	
 	@Override
 	public List<ProductOptionDTO> selectAll() {
-		System.out.println("session:: "+session);
 		return session.selectList("com.aunnie.productOption.selectAll");
 	}
 
