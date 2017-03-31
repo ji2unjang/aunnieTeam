@@ -12,5 +12,9 @@
 		
 		<typeAlias type="com.aunnie.web.dto.MirrorTalkDTO" alias="talk"/>
 
+		<typeAlias type="com.aunnie.web.dto.PaymentDTO" alias="payment"/>
+		
+		<typeAlias type="com.aunnie.web.dto.OrderDTO" alias="order"/>
+
 	</typeAliases>
 </configuration>
