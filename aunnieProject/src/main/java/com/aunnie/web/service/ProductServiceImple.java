@@ -17,7 +17,6 @@ public class ProductServiceImple implements ProductService{
 	
 	@Override
 	public List<ProductDTO> getAll() {
-		System.out.println("dao::: "+dao);
 		return dao.selectAll();
 	}
 

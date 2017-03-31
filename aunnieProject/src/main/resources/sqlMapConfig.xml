@@ -8,5 +8,6 @@
 		<typeAlias type="com.aunnie.web.dto.EventDTO" alias="event"/>
 		<typeAlias type="com.aunnie.web.dto.QuestionsDTO" alias="qdto"/>
 		<typeAlias type="com.aunnie.web.dto.ProductDTO" alias="product"/>
+		<typeAlias type="com.aunnie.web.dto.ProductOptionDTO" alias="pOption"/>
 	</typeAliases>
 </configuration>
