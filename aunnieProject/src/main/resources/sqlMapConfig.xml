@@ -14,5 +14,6 @@
 		
 		<typeAlias type="com.aunnie.web.dto.OrderDTO" alias="order"/>
 
+		<typeAlias type="com.aunnie.web.dto.OrderDetailDTO" alias="orderDetail"/>
 	</typeAliases>
 </configuration>
