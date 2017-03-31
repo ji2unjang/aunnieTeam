@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.aunnie.product">
+	<select id="selectAll" resultType="product">
+		SELECT product_no,avg_score,p_name,description,ingredient,brand_name,company,producer,p_date,category_no,division_no,
+		section_no,e_code FROM PRODUCT
+	</select>
+	<select id="selectOne" resultType="product" parameterType="int">
+		SELECT product_no,avg_score,p_name,description,ingredient,brand_name,company,producer,p_date,category_no,division_no,
+		section_no,e_code FROM PRODUCT WHERE product_no=#{product_no}
+	</select>
+	<insert id="insertOne" parameterType="product">
+		INSERT INTO PRODUCT
+		VALUES(seq_product_no.nextval,#{avg_score},#{p_name},#{description},#{ingredient},#{brand_name},#{company},
+		#{producer},#{p_date},#{category_no},#{division_no},#{section_no},#{e_code})
+	</insert>
+	<update id="updateOne" parameterType="product">
+		UPDATE PRODUCT
+		SET avg_score=#{avg_score},p_name=#{p_name},description=#{description},ingredient=#{ingredient},brand_name=#{brand_name},
+		company=#{company},producer=#{producer},p_date=#{p_date},category_no=#{category_no},division_no=#{division_no},
+		section_no=#{section_no},e_code=#{e_code}
+	</update>
+	<delete id="deleteOne" parameterType="int">
+		DELETE PRODUCT
+		WHERE product_no=#{product_no}
+	</delete>
+  </mapper>

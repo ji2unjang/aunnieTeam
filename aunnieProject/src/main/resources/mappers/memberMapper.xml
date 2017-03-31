@@ -15,8 +15,8 @@
 		#{birthday},#{regdate},#{mileage},#{total_price},#{degree})
 	</insert>
 	<update id="updateOne" parameterType="member">
-		UPDATE MEMBER SET(id=#{id},pw=#{pw},name=#{name},nickname=#{nickname},email=#{email},phone=#{phone},address=#{address},
-		birthday=#{birthday},regdate=#{regdate},mileage=#{mileage},total_price=#{total_price},degree=#{degree})
+		UPDATE MEMBER SET id=#{id},pw=#{pw},name=#{name},nickname=#{nickname},email=#{email},phone=#{phone},address=#{address},
+		birthday=#{birthday},regdate=#{regdate},mileage=#{mileage},total_price=#{total_price},degree=#{degree}
 	</update>
 	<delete id="deleteOne" parameterType="int">
 		DELETE MEMBER WHERE member_no=#{member_no}
