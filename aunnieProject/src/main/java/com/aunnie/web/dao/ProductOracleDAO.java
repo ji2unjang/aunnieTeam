@@ -14,7 +14,6 @@ public class ProductOracleDAO implements ProductDAO{
 	private SqlSession session;
 	@Override
 	public List<ProductDTO> selectAll() {
-		System.out.println("session:: "+session);
 		return session.selectList("com.aunnie.product.selectAll");
 	}
 
