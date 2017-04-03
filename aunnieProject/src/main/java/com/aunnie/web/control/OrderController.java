@@ -21,7 +21,7 @@ public class OrderController {
 	
 	@RequestMapping("/orderList")
 	public ModelAndView list(){
-		return new ModelAndView("orderList","list",os.selectAll());
+		return new ModelAndView("orderList","orderList",os.selectAll());
 	}
 
 	@RequestMapping("/orderdetail")
@@ -30,12 +30,12 @@ public class OrderController {
 		return new ModelAndView("orderDetail","dto",os.selectOne(order_no));
 				
 	}
-	@RequestMapping("/writeForm")
+	@RequestMapping("/orderwriteForm")
 	public String writeForm(){
 		
-		return "writeForm";
+		return "orderwriteForm";
 	}
-	@RequestMapping("/writeOk")
+	@RequestMapping("/orderwriteOk")
 	public String write(
 			@ModelAttribute("dto")OrderDTO dto,
 			HttpServletRequest req){
@@ -44,18 +44,19 @@ public class OrderController {
 		return "redirect:/orderList";
 	}
 	
-	@RequestMapping("/modifyForm")
+	@RequestMapping("/ordermodifyForm")
 	public ModelAndView modifyForm(
 			@RequestParam("order_no") int order_no){
 
-		return new ModelAndView("modifyForm","dto",os.selectOne(order_no));
+		return new ModelAndView("ordermodifyForm","dto",os.selectOne(order_no));
 	}
-	@RequestMapping("/modifyOk")
-	public String modifyOk(
-			@ModelAttribute("dto")OrderDTO dto){
-		
+	@RequestMapping("/ordermodifyOk")
+	public String modifyOk(@ModelAttribute("dto")OrderDTO dto){
+		os.update(dto);
 		return "redirect:/orderList";
 	}
+	
+	@RequestMapping("/orderdelete")
 	public String delete(
 			@ModelAttribute("order_no")int order_no){
 		os.delete(order_no);

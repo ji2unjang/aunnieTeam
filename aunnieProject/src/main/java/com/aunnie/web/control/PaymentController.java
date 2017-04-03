@@ -31,31 +31,33 @@ public class PaymentController {
 		return new ModelAndView("paymentDetail","dto",ps.selectOne(payment_no));
 	}
 	
-	@RequestMapping("/writeForm")
+	@RequestMapping("/paymentwriteForm")
 	public String writeForm(){
 		return "writeForm";
 	}
 	
-	@RequestMapping("/writeOk")
+	@RequestMapping("/paymentwriteOk")
 	public String write(
 			@RequestAttribute("dto")PaymentDTO dto){
 		ps.insertOne(dto);
 		return "redirect:/paymentList";
 	}
 	
-	@RequestMapping("/modifyForm")
+	@RequestMapping("/paymentmodifyForm")
 	public ModelAndView modifyForm(
 			@RequestAttribute("payment_no")int payment_no){
-		return new ModelAndView("modifyForm","dto",ps.selectOne(payment_no));
+		return new ModelAndView("paymentmodifyForm","dto",ps.selectOne(payment_no));
 	}
 	
-	@RequestMapping("/modifyOk")
+	@RequestMapping("/paymentmodifyOk")
 	public String modifyOk(
 			@ModelAttribute("dto")PaymentDTO dto){
 		
+		ps.update(dto);
 		return "redirect:/orderList";
 	}
 	
+	@RequestMapping("/paymentdelete")
 	public String delete(
 			@RequestAttribute("payment_no")int payment_no){
 		

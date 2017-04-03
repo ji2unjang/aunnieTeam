@@ -16,20 +16,6 @@ public class PaymentServiceImple implements PaymentService{
 	@Resource(name="paymentDAO")
 	private PaymentDAO dao;
 	
-/*	@Override
-	public List<PaymentDTO> selectAll() {
-		return dao.selectAll();
-	}
-
-	@Override
-	public void insertOne(PaymentDTO dto) {
-		dao.insertOne(dto);
-	}
-
-	@Override
-	public void deleteOne(int payment_no) {
-		dao.deleteOne(payment_no);
-	}*/
 	
 	
 	@Override
