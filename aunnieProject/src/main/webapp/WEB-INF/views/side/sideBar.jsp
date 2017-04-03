@@ -13,10 +13,17 @@
 		font-weight: bold;
 	}
 	.transition{
-		padding-top: 7px;
-		padding-bottom: 7px;
+		padding-left: 10px;
 		color: black;
+		
 	}
+	.title:HOVER {
+		color : #9d7fef;
+	}
+	.transition:HOVER {
+		color : #9d7fef;
+	}
+	
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -25,14 +32,20 @@
 <script type="text/javascript">
 
 $(function(){
-	$('.visible.example .ui.sidebar').sidebar({
+	$('.visible.example .ui.sidebar')
+	.sidebar({
 	    context: '.visible.example .bottom.segment'
-	  }).sidebar('hide');
+	    })
+	.sidebar('hide');
+		
+	$('.ui.accordion').accordion();
 	
-	$(function(){
-		$('.ui.accordion').accordion();
-	});
+	$(".transition").on("click", seltxt);
 });
+
+function seltxt(){
+	/* document.getElementById("zzz").setAttribute("color", "blue"); */
+};
 </script>
 
 <body>
@@ -45,7 +58,7 @@ $(function(){
 			</div>
 			
 			<div class="item">
-				<i class="tasks icon"></i>
+				<i class="smile icon"></i>
 				<div class="title">회원</div>
 			</div>
 			
@@ -55,15 +68,16 @@ $(function(){
 			</div>
 			
 			<div class="item">
-				<i class="shop icon"></i>
+				<i class="shop icon"></i>	
 				<div class="title">주문</div>
 				<div class="content active">
-					<a href="#"><p class="transition visible" style="display: block !important;">전체주문</p></a>
+					<a href="#"><p id="zzz" class="transition visible" style="display: block !important;" >전체주문</p></a>
 					<a href="#"><p class="transition visible" style="display: block !important;">주문배송</p></a>
 					<a href="#"><p class="transition visible" style="display: block !important;">교환관리</p></a>
 					<a href="#"><p class="transition visible" style="display: block !important;">환불관리</p></a>
 				</div>
 			</div>
+			
 			
 			<div class="item">
 				<i class="calendar Outline icon"></i>	
@@ -102,7 +116,8 @@ $(function(){
 				</div>
 			</div>
 			<div>
-				<img src="images/ds.PNG" alt="logo2" />
+				<!-- <img class="ui medium image" src="images/ds.PNG" alt="logo2" /> -->
+				<!-- <img class="ui medium image" src="images/logo1.PNG" alt="logo2" /> -->
 			</div>
 		</div>
 	</div>
