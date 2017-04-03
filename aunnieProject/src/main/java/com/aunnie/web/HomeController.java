@@ -40,4 +40,9 @@ public class HomeController {
 		return "admin/adminLogin";
 	}
 	
+	@RequestMapping("/adminHome")
+	public String adhome(){
+		return "side/sideBar";
+	}
+	
 }
