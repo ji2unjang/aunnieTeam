@@ -24,4 +24,9 @@ public class MemberController {
 	public ModelAndView list(){
 		return new ModelAndView("list","list",service.getAll());
 	}
+	
+	@RequestMapping("/adminLog")
+	public String login(){
+		return "login";
+	}
 }

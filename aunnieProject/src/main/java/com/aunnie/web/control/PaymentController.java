@@ -20,36 +20,36 @@ public class PaymentController {
 	@Resource(name="paymentService")
 	private PaymentService ps;
 	
-	@RequestMapping("/paymentList")
+	@RequestMapping("/paymentList4")
 	public ModelAndView list(){
 		return new ModelAndView("payment","payment",ps.selectAll());
 	}
 	
-	@RequestMapping("/paymentdetail")
+	@RequestMapping("/paymentdetail4")
 	public ModelAndView paymentdetail(
 			@RequestAttribute("payment_no")int payment_no){
 		return new ModelAndView("paymentDetail","dto",ps.selectOne(payment_no));
 	}
 	
-	@RequestMapping("/writeForm")
+	@RequestMapping("/writeForm4")
 	public String writeForm(){
 		return "writeForm";
 	}
 	
-	@RequestMapping("/writeOk")
+	@RequestMapping("/writeOk4")
 	public String write(
 			@RequestAttribute("dto")PaymentDTO dto){
 		ps.insertOne(dto);
 		return "redirect:/paymentList";
 	}
 	
-	@RequestMapping("/modifyForm")
+	@RequestMapping("/modifyForm4")
 	public ModelAndView modifyForm(
 			@RequestAttribute("payment_no")int payment_no){
 		return new ModelAndView("modifyForm","dto",ps.selectOne(payment_no));
 	}
 	
-	@RequestMapping("/modifyOk")
+	@RequestMapping("/modifyOk4")
 	public String modifyOk(
 			@ModelAttribute("dto")PaymentDTO dto){
 		
