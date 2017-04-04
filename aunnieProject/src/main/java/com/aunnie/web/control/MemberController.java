@@ -22,6 +22,7 @@ public class MemberController {
 	
 	@RequestMapping("/memberList")
 	public ModelAndView list(){
-		return new ModelAndView("list","list",service.getAll());
+		return new ModelAndView("admin/members","list",service.getAll());
 	}
+	
 }
