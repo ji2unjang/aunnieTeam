@@ -43,5 +43,9 @@ public class MemberController {
 
 		return "redirect:memberList";
 	}
-	
+
+	@RequestMapping("/adminLog")
+	public String login(){
+		return "login";
+	}
 }
