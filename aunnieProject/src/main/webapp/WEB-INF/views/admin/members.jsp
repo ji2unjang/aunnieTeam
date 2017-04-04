@@ -5,6 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<script type="text/javascript">
+	$(function(){
+		$('.ui.search')
+		.search('cancel query');	
+	});
+</script>
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
@@ -13,6 +20,17 @@
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 </head>
 <body>
+
+<div class="ui right aligned category search">
+  <div class="ui icon input">
+    <input class="prompt" type="text" placeholder="Search animals..." value="">
+    <i class="search icon"></i>
+  </div>
+  <div class="results"></div>
+</div>
+
+
+
 <table class="ui compact celled definition table">
   <thead class="full-width">
     <tr>
