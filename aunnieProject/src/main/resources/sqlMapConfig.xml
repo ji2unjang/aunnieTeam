@@ -9,7 +9,6 @@
 		<typeAlias type="com.aunnie.web.dto.QuestionsDTO" alias="qdto"/>
 		<typeAlias type="com.aunnie.web.dto.QuestionsDTO" alias="qdto"/>
 		<typeAlias type="com.aunnie.web.dto.MirrorTalkDTO" alias="talk"/>
-<<<<<<< HEAD
 
 		<typeAlias type="com.aunnie.web.dto.PaymentDTO" alias="payment"/>
 		
@@ -17,8 +16,6 @@
 		
 		<typeAlias type="com.aunnie.web.dto.CouponDTO" alias="coupon"/>
 
-=======
->>>>>>> branch 'YJ0404' of https://BongjiKim@bitbucket.org/ji2unjang/aunnieproject.git
 		<typeAlias type="com.aunnie.web.dto.ProductDTO" alias="product"/>
 		<typeAlias type="com.aunnie.web.dto.ProductOptionDTO" alias="pOption"/>
 		<typeAlias type="com.aunnie.web.dto.PaymentDTO" alias="payment"/>
