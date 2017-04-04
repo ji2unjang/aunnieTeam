@@ -46,4 +46,8 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping("/googleLogin")
+	public String google(){
+		return "googleLogin";
+	}
 }
