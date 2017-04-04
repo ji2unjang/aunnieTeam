@@ -41,8 +41,10 @@
 				</div>
 				<div class="column">
 					<div id="searchbar">
-						<input type="text" name="search" id="" /> <input type="button"
-							value="" name="searchBtn" />
+						<div class="ui icon input">
+							<input type="text" placeholder="Search..."> <i
+								class="search icon"></i>
+						</div>
 					</div>
 				</div>
 				<div class="column"></div>
@@ -68,7 +70,7 @@
 					<div class="header">
 						<i class="tags icon"></i> 클렌징
 					</div>
-					  <div class="divider"></div>
+					<div class="divider"></div>
 					<a class="item">메이크업 리무버</a> <a class="item">페이스워시</a> <a
 						class="item">필링 &스크럽</a>
 					<div class="header">
