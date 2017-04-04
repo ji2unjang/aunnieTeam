@@ -47,5 +47,11 @@ public class MemberOracleDAO implements MemberDAO{
 	public List<MemberDTO> selectPage(Criteria cri) {
 		return session.selectList(namespace+".selectPage",cri);
 	}
+
+	@Override
+	public int getTotal() {
+		return session.selectOne(namespace+".getCount");
+	}
+	
 	
 }

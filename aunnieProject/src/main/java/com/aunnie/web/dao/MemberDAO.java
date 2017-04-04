@@ -13,4 +13,5 @@ public interface MemberDAO {
 	public void insertOne(MemberDTO dto);
 	public void updateOne(MemberDTO dto);
 	public void deleteOne(int no);
+	public int getTotal();
 }

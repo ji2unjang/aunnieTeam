@@ -45,4 +45,9 @@ public class MemberServiceImple implements MemberService{
 		return dao.selectPage(cri);
 	}
 
+	@Override
+	public int totalCount() {
+		return dao.getTotal();
+	}
+
 }
