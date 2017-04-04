@@ -47,7 +47,7 @@
 
 </head>
 <body>
-	<%@include file="/head.jsp"%>
+	<%@include file="/WEB-INF/views/head.jsp"%>
 	<div class="container">
 		<div id="selectDiv">
 			<!-- 카테고리 내용 추가해주세요-->
