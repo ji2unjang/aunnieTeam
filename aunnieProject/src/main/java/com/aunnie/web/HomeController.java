@@ -35,5 +35,13 @@ public class HomeController {
 		
 		return "home";
 	}
+	@RequestMapping("/adminLogin")
+	public String home(){
+		return "admin/adminLogin";
+	}
 	
+	@RequestMapping("/googleLogin")
+	public String google(){
+		return "googleLogin";
+	}
 }

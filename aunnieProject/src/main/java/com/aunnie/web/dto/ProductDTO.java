@@ -10,18 +10,15 @@ public class ProductDTO {
 	private String company;
 	private String producer;
 	private String p_date;
-	private int category_no;//category
-	private int division_no;//sub-category
-	private int section_no;//sub-sub-category
+	private int type_no;
 	private String e_code;//event code
 	
 	public ProductDTO() {
 		super();
 	}
-
+	
 	public ProductDTO(int product_no, int avg_score, String p_name, String description, String ingredient,
-			String brand_name, String company, String producer, String p_date, int category_no, int division_no,
-			int section_no, String e_code) {
+			String brand_name, String company, String producer, String p_date, int type_no, String e_code) {
 		super();
 		this.product_no = product_no;
 		this.avg_score = avg_score;
@@ -32,11 +29,10 @@ public class ProductDTO {
 		this.company = company;
 		this.producer = producer;
 		this.p_date = p_date;
-		this.category_no = category_no;
-		this.division_no = division_no;
-		this.section_no = section_no;
+		this.type_no = type_no;
 		this.e_code = e_code;
 	}
+
 
 	public int getProduct_no() {
 		return product_no;
@@ -110,28 +106,12 @@ public class ProductDTO {
 		this.p_date = p_date;
 	}
 
-	public int getCategory_no() {
-		return category_no;
+	public int getType_no() {
+		return type_no;
 	}
 
-	public void setCategory_no(int category_no) {
-		this.category_no = category_no;
-	}
-
-	public int getDivision_no() {
-		return division_no;
-	}
-
-	public void setDivision_no(int division_no) {
-		this.division_no = division_no;
-	}
-
-	public int getSection_no() {
-		return section_no;
-	}
-
-	public void setSection_no(int section_no) {
-		this.section_no = section_no;
+	public void setType_no(int type_no) {
+		this.type_no = type_no;
 	}
 
 	public String getE_code() {
@@ -141,6 +121,5 @@ public class ProductDTO {
 	public void setE_code(String e_code) {
 		this.e_code = e_code;
 	}
-	
 	
 }

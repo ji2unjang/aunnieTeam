@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aunnie.productOption">
+	<select id="selectAll" resultType="pOption">
+		SELECT option_no,option_name,option_price,option_quantity,option_volume,product_no FROM P_OPTION
+	</select>
+	<select id="selectOne" parameterType="int" resultType="pOption">
+		SELECT option_no,option_name,option_price,option_quantity,option_volume,product_no FROM P_OPTION
+		WHERE OPTION_NO=#{option_no}
+	</select>
+	<insert id="insertOne" parameterType="pOption">
+		INSERT INTO P_OPTION
+		VALUES(seq_productoption_no.nextval,#{option_name},#{option_price},#{option_quantity},#{option_volume},#{product_no})
+	</insert>
+	<update id="updateOne" parameterType="pOption">
+		UPDATE P_OPTION
+		SET OPTION_NAME=#{option_name},OPTION_PRICE=#{option_price},OPTION_QUANTITY=#{option_quantity},
+		OPTION_VOLUME=#{option_volume}
+	</update>
+	<delete id="deleteOne" parameterType="int">
+		DELETE P_OPTION
+		WHERE OPTION_NO=#{option_no}
+	</delete>
+</mapper>

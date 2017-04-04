@@ -24,15 +24,12 @@ public class MemberController {
 	
 	@RequestMapping("/sign")
 	public String sing() {
-
 		return "sign";
 	}
 
 	@RequestMapping("/signOk")
 	public String signOk(@ModelAttribute("dto") MemberDTO dto, HttpServletRequest req) {
-		
 		service.writeOne(dto);
-
 		return "redirect:memberList";
 	}
 }
