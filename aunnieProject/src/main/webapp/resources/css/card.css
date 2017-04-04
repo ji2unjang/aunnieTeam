@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+.card{
+	width:30%;
+	background-color:pink;
+	display:inline-block;
+	float:left;
+}
+.card_img img{
+	width:90%;
+}
