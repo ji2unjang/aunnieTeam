@@ -59,6 +59,8 @@ $(function(){
 
 function menu1(menu){
 	   console.log("11");
+	   $(".somenu").css("color","black");
+	   /* $(".somenu").css("font-weight","nomal"); */
 	   $(".title").css("color","black");
 	   $("#"+menu.id).css("color","#9d7fef");
 	   
@@ -67,7 +69,6 @@ function menu2(menu){
 	console.log("222");
 	$(".title").css("color","black");
 	$(".somenu").css("color","black");
-	$("#"+menu.id).css("font-weight","bold");
 	$("#"+menu.id).css("color","#9d7fef");
 	
 	
