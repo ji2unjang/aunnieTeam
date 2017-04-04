@@ -9,20 +9,34 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/components/grid.min.css">
 
 <style type="text/css">
+	
+	.ui.bottom.visible.sidebar, .ui.left.visible.sidebar, .ui.right.visible.sidebar, .ui.top.visible.sidebar {
+    width: 17%;
+}
 	.title{
 		font-weight: bold;
 	}
-	.transition{
-		padding-left: 10px;
-		color: black;
-		
+	
+	.ui.vertical.menu .item:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(33, 133, 208, 0.08);    
 	}
-	.title:HOVER {
-		color : #9d7fef;
+	
+	.ui .vertical.menu .title:HOVER{
+		color: #9d7fef;
 	}
-	.transition:HOVER {
-		color : #9d7fef;
+	.ui.vertical.menu .item:HOVER{
+		color: #9d7fef;
 	}
+	#logo{
+		position: fixed;
+	}
+	
 	
 </style>
 <meta charset="UTF-8">
@@ -39,13 +53,24 @@ $(function(){
 	.sidebar('hide');
 		
 	$('.ui.accordion').accordion();
-	
-	$(".transition").on("click", seltxt);
+
 });
 
-function seltxt(){
-	/* document.getElementById("zzz").setAttribute("color", "blue"); */
-};
+
+function menu1(menu){
+	   console.log("11");
+	   $(".title").css("color","black");
+	   $("#"+menu.id).css("color","#9d7fef");
+	   
+	}
+function menu2(menu){
+	console.log("222");
+	$(".somenu").css("color","black");
+	$("#"+menu.id).css("font-weight","bold");
+	$("#"+menu.id).css("color","#9d7fef");
+	
+	
+}
 </script>
 
 <body>
@@ -54,27 +79,27 @@ function seltxt(){
 			
 			<div class="item">
 				<i class="home icon"></i>
-				<div class="title">기본정보</div>
+				<div class="title" onclick="menu1(this)" id="m1"> 기본정보</div>
 			</div>
 			
 			<div class="item">
 				<i class="smile icon"></i>
-				<div class="title">회원</div>
+				<div class="title" onclick="menu1(this)" id="m2">회원</div>
 			</div>
 			
 			<div class="item">
 				<i class="browser icon"></i>
-				<div class="title">상품</div>
+				<div class="title" onclick="menu1(this)" id="m3">상품</div>
 			</div>
 			
 			<div class="item">
 				<i class="shop icon"></i>	
 				<div class="title">주문</div>
-				<div class="content active">
-					<a href="#"><p id="zzz" class="transition visible" style="display: block !important;" >전체주문</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">주문배송</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">교환관리</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">환불관리</p></a>
+				<div class="content">
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s11">전체주문</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s12">주문배송</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s13">교환관리</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s14">환불관리</a>
 				</div>
 			</div>
 			
@@ -83,7 +108,7 @@ function seltxt(){
 				<i class="calendar Outline icon"></i>	
 				<div class="title">이벤트</div>
 				<div class="content ">
-					<a href="#"><p class="transition visible" style="display: block !important;">요구분석..</p></a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s21">요구분석..</a>
 				</div>
 			</div>
 			
@@ -91,8 +116,8 @@ function seltxt(){
 				<i class="ticket icon"></i>
 				<div class="title ">쿠폰</div>
 				<div class="content">
-					<a href="#"><p class="transition visible" style="display: block !important;">쿠폰관리</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">쿠폰발급</p></a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s31">쿠폰관리</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="s32">쿠폰발급</a>
 				</div>
 			</div>
 			
@@ -100,9 +125,9 @@ function seltxt(){
 				<i class="comment Outline icon"></i>
 				<div class="title">게시판</div>
 				<div class="content">
-					<a href="#"><p class="transition visible" style="display: block !important;">리뷰관리</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">미러톡관리</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">Q&A</p></a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="41">리뷰관리</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="42">미러톡관리</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="43">Q&A</a>
 				</div>
 			</div>
 			
@@ -110,14 +135,14 @@ function seltxt(){
 				<i class="signal icon"></i>
 				<div class="title">통계</div>
 				<div class="content">
-					<a href="#"><p class="transition visible" style="display: block !important;">수익통계</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">회원통계</p></a>
-					<a href="#"><p class="transition visible" style="display: block !important;">브랜드통계</p></a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="51">수익통계</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="52">회원통계</a>
+					<a href="#" class="item somenu" onclick="menu2(this)" id="53">브랜드통계</a>
 				</div>
 			</div>
+			
+			
 			<div>
-				<!-- <img class="ui medium image" src="images/ds.PNG" alt="logo2" /> -->
-				<!-- <img class="ui medium image" src="images/logo1.PNG" alt="logo2" /> -->
 			</div>
 		</div>
 	</div>
