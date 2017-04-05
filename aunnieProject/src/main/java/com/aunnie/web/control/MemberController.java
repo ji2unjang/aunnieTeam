@@ -47,5 +47,9 @@ public class MemberController {
 
 		return "redirect:memberList";
 	}
-	
+/*	@RequestMapping("/server01")
+	public String test(){
+		return "admin/server01";
+	}
+	*/
 }
