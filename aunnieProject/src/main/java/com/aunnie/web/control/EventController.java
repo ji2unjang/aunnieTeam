@@ -18,22 +18,22 @@ public class EventController {
 	private EventService es;
 	
 	
-	@RequestMapping("/eventList")
+	@RequestMapping("/eventList2")
 	public ModelAndView list(){
 		return new ModelAndView("eventList", "list", es.getAll());
 	}
 	
-	@RequestMapping("/detail")
+	@RequestMapping("/detail2")
 	public ModelAndView detail(
 			@RequestParam("e_code")int e_code){
 		return new ModelAndView("eventDetail", "dto", es.getOne(e_code));
 	}
 	
-	@RequestMapping("/writeForm")
+	@RequestMapping("/writeForm2")
 	public String writeFrom(){
-		return "writeForm";
+		return "writeForm2";
 	}
-	@RequestMapping("/writeOk")
+	@RequestMapping("/writeOk2")
 	public String write(
 			@ModelAttribute("dto")EventDTO dto,
 			HttpServletRequest req){
@@ -41,19 +41,19 @@ public class EventController {
 		return "redirect:/eventList";
 	}
 	
-	@RequestMapping("/modifyForm")
+	@RequestMapping("/modifyForm2")
 	public ModelAndView modifyForm(
 			@RequestParam("e_code")int e_code){
 		return new ModelAndView("modifyForm", "dto", es.getOne(e_code));
 	}
 	
-	@RequestMapping("/modifyOk")
+	@RequestMapping("/modifyOk2")
 	public String modifyOk(
 			@ModelAttribute("dto")EventDTO dto){
 		es.modifyOne(dto);
 		return "redirect:/eventList";
 	}
-	@RequestMapping("/delete")
+	@RequestMapping("/delete2")
 	public String delete(
 			@RequestParam("e_code")int e_code){
 		es.deleteOne(e_code);

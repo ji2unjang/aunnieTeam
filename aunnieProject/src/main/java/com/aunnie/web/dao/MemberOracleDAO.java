@@ -23,7 +23,7 @@ public class MemberOracleDAO implements MemberDAO{
 
 	@Override
 	public MemberDTO selectOne(int no) {
-		return session.selectOne("com.aunnie.member.selectOne");
+		return session.selectOne("com.aunnie.member.selectOne", no);
 	}
 
 	@Override
@@ -39,6 +39,11 @@ public class MemberOracleDAO implements MemberDAO{
 	@Override
 	public void deleteOne(int no) {
 		session.update("com.aunnie.member.deleteOne",no);
+	}
+
+	@Override
+	public MemberDTO findUser(MemberDTO memberDto) {
+		return session.selectOne("com.aunnie.member.findUser", memberDto);
 	}
 	
 }

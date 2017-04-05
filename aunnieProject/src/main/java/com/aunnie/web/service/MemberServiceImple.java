@@ -39,4 +39,9 @@ public class MemberServiceImple implements MemberService{
 		dao.deleteOne(no);
 	}
 
+	@Override
+	public MemberDTO findUser(MemberDTO memberdto) {
+		return dao.findUser(memberdto);
+	}
+
 }
