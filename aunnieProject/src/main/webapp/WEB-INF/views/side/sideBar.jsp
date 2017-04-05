@@ -65,7 +65,10 @@ function menu1(menu){
 	}
 function menu2(menu){
 	console.log("222");
+	$(".title").css("color","black");
 	$(".somenu").css("color","black");
+	console.dir($("#"+menu.id).parent().closest(".title"));
+	$("#"+menu.id).parent().closest(".title").css("color","#9d7fef");
 	$("#"+menu.id).css("font-weight","bold");
 	$("#"+menu.id).css("color","#9d7fef");
 	
@@ -94,12 +97,14 @@ function menu2(menu){
 			
 			<div class="item">
 				<i class="shop icon"></i>	
-				<div class="title">주문</div>
-				<div class="content">
-					<a href="#" class="item somenu" onclick="menu2(this)" id="s11">전체주문</a>
-					<a href="#" class="item somenu" onclick="menu2(this)" id="s12">주문배송</a>
-					<a href="#" class="item somenu" onclick="menu2(this)" id="s13">교환관리</a>
-					<a href="#" class="item somenu" onclick="menu2(this)" id="s14">환불관리</a>
+				<div class="menuItem">
+					<div class="title" id="m4">주문</div>
+					<div class="content">
+						<a href="#" class="item somenu" onclick="menu2(this)" id="s11">전체주문</a>
+						<a href="#" class="item somenu" onclick="menu2(this)" id="s12">주문배송</a>
+						<a href="#" class="item somenu" onclick="menu2(this)" id="s13">교환관리</a>
+						<a href="#" class="item somenu" onclick="menu2(this)" id="s14">환불관리</a>
+					</div>
 				</div>
 			</div>
 			

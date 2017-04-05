@@ -45,6 +45,6 @@ public class HomeController {
 	}
 	@RequestMapping("/side")
 	public String adhome(){
-		return "side/sideBar";
+		return "side/adminSide";
 	}
 }

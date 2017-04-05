@@ -29,7 +29,10 @@ public class MemberController {
 		cri.setPage(pno);
 		return new ModelAndView("list", "list", service.getPage(cri));
 	}
-	
+	@RequestMapping("/adminLog")
+	public String login(){
+		return "login";
+	}
 	@RequestMapping("/sign")
 	public String sing() {
 
@@ -42,10 +45,5 @@ public class MemberController {
 		service.writeOne(dto);
 
 		return "redirect:memberList";
-	}
-
-	@RequestMapping("/adminLog")
-	public String login(){
-		return "login";
 	}
 }
