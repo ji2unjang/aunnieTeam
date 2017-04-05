@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aunnie.web.dto.MemberDTO;
@@ -19,7 +20,9 @@ public class RestMemberController {
 
 	@Resource(name="memberService")
 	private MemberService service;
+	
 	@RequestMapping("/server01")
+	@ResponseBody
 	public List<MemberDTO> search(@RequestParam int no){
 		System.out.println(no);
 		
