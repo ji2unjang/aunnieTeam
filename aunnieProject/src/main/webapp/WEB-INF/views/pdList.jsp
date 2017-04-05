@@ -13,12 +13,17 @@
 <link rel="stylesheet" type="text/css" href="css/list.css" />
 <style type="text/css">
 .ui.cards>.card {
-	box-shadow: 0 1px 0 0 #e6e6e6, 0 0 0 1px #e6e6e6 !important;
+	border: 1px solid #e6e6e6 !important;
+	box-shadow: none !important;
 }
+.ui.cards>.card:hover {
+	border:1px solid #ec488c !important;
+}
+
 
 .ui.cards {
 	text-align: center;
-	width: 95%;
+
 }
 
 .ui.inverted.dimmer {
@@ -46,7 +51,7 @@
 		$('.special.cards .image').dimmer({
 			on : 'hover'
 		});
-
+		$('.ui.rating').rating('disable')
 	});
 </script>
 </head>
@@ -90,61 +95,12 @@
 		</div>
 
 		<h4 class="ui horizontal divider header">
-			<i class="tag icon"></i> 베스트상품
+			<i class="tag icon"></i> 언니의 화장대 베스트 상품
 		</h4>
 
-
-		<div class="ui grid">
-			<div class="four wide column">
-				<div class="ui link  cards" id="cardss">
-					<div class="card">
-						<div class="image">
-							<img src="img/product1.jpg">
-						</div>
-						<div class="content">
-							<div class="meta">
-								<a>브랜드명</a>
-							</div>
-							<div class="header">상품명</div>
-							<div class="header">가격</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="four wide column">
-				<div class="ui link cards" id="cardss">
-					<div class="card">
-						<div class="image">
-							<img src="img/product1.jpg">
-						</div>
-						<div class="content">
-							<div class="meta">
-								<a>브랜드명</a>
-							</div>
-							<div class="header">상품명</div>
-							<div class="header">가격</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="four wide column">
-				<div class="ui link cards" id="cardss">
-					<div class="card">
-						<div class="image">
-							<img src="img/product1.jpg">
-						</div>
-						<div class="content">
-							<div class="meta">
-								<a>브랜드명</a>
-							</div>
-							<div class="header">상품명</div>
-							<div class="header">가격</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="four wide column">
-				<div class="ui special cards">
+		<div class="ui four column grid">
+			<div class="column">
+				<div class="ui fluid special cards">
 					<div class="card">
 						<div class="blurring dimmable image">
 							<div class="ui inverted dimmer">
@@ -157,10 +113,7 @@
 											<button class="ui button">
 												<i class="heart icon"></i>
 											</button>
-
 										</div>
-
-
 									</div>
 								</div>
 							</div>
@@ -177,12 +130,106 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="ui divider"></div>
-
-
+			
+			<div class="column">
+				<div class="ui fluid special cards">
+					<div class="card">
+						<div class="blurring dimmable image">
+							<div class="ui inverted dimmer">
+								<div class="content">
+									<div class="bottom">
+										<div class="ui small basic icon buttons">
+											<button class="ui button">
+												<i class="add to cart icon"></i>
+											</button>
+											<button class="ui button">
+												<i class="heart icon"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<img src="img/product1.jpg">
+						</div>
+						<div class="content">
+							<div class="meta">
+								<a>브랜드명</a>
+							</div>
+							<div class="header">상품명</div>
+							<div class="header">가격</div>
+						</div>
+						<div class="description"></div>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="ui fluid special cards">
+					<div class="card">
+						<div class="blurring dimmable image">
+							<div class="ui inverted dimmer">
+								<div class="content">
+									<div class="bottom">
+										<div class="ui small basic icon buttons">
+											<button class="ui button">
+												<i class="add to cart icon"></i>
+											</button>
+											<button class="ui button">
+												<i class="heart icon"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<img src="img/product1.jpg">
+						</div>
+						<div class="content">
+							<div class="meta">
+								<a>브랜드명</a>
+							</div>
+							<div class="header">상품명</div>
+							<div class="header">가격</div>
+						</div>
+						<div class="description"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="column">
+				<div class="ui fluid special cards">
+					<div class="card">
+						<div class="blurring dimmable image">
+							<div class="ui inverted dimmer">
+								<div class="content">
+									<div class="bottom">
+										<div class="ui small basic icon buttons">
+											<button class="ui button">
+												<i class="add to cart icon"></i>
+											</button>
+											<button class="ui button">
+												<i class="heart icon"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<img src="img/product1.jpg">
+						</div>
+						<div class="content">
+							<div class="meta">
+								<a>브랜드명</a>
+							</div>
+							<div class="header">상품명</div>
+							<div class="header">가격</div>
+						</div>
+						<div class="description">
+						<div class="ui star rating" data-rating="5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
+		<div class="ui divider"></div>
 	</div>
 </body>
 </html>

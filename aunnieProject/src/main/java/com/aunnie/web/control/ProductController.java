@@ -32,4 +32,9 @@ public class ProductController {
 		mv.addObject("sections", ss.getAll());
 		return mv;
 	}
+	
+	@RequestMapping("/productDetail")
+	public ModelAndView listDetail(){
+		return new ModelAndView("pdDetail","list",service.getAll());
+	}
 }

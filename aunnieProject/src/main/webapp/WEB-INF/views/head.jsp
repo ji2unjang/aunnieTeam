@@ -26,8 +26,10 @@
 				</div>
 				<div class="column">
 					<div id="searchbar">
-						<input type="text" name="search" id="" /> <input type="button"
-							value="" name="searchBtn" />
+						<div class="ui icon input">
+							<input type="text" placeholder="Search..."> <i
+								class="search icon"></i>
+						</div>
 					</div>
 				</div>
 				<div class="column"></div>
