@@ -27,7 +27,7 @@ public class MemberController {
 		cri.setPerPageNum(10);
 		cri.setTotalCount(service.totalCount());
 		cri.setPage(pno);
-		return new ModelAndView("list", "list", service.getPage(cri));
+		return new ModelAndView("admin/members", "list", service.getPage(cri));
 	}
 	@RequestMapping("/adminLog")
 	public String login(){

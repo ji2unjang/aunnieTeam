@@ -59,6 +59,8 @@ $(function(){
 
 function menu1(menu){
 	   console.log("11");
+	   $(".somenu").css("color","black");
+	   /* $(".somenu").css("font-weight","nomal"); */
 	   $(".title").css("color","black");
 	   $("#"+menu.id).css("color","#9d7fef");
 	   
@@ -67,9 +69,12 @@ function menu2(menu){
 	console.log("222");
 	$(".title").css("color","black");
 	$(".somenu").css("color","black");
+<<<<<<< HEAD
 	console.dir($("#"+menu.id).parent().closest(".title"));
 	$("#"+menu.id).parent().closest(".title").css("color","#9d7fef");
 	$("#"+menu.id).css("font-weight","bold");
+=======
+>>>>>>> branch 'jr0405' of https://ji2unjang@bitbucket.org/ji2unjang/aunnieproject.git
 	$("#"+menu.id).css("color","#9d7fef");
 	
 	

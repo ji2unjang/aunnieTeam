@@ -62,16 +62,19 @@
 			<!-- 카테고리 내용 추가해주세요-->
 			<select class="ui dropdown">
 				<option value="">대분류</option>
-				<option value="1">Male</option>
-				<option value="0">Female</option>
+				<c:forEach var="category" items="${categories }">
+					<option value="${category.category_no }">${category.category_name }</option>
+				</c:forEach>
 			</select> <select class="ui dropdown">
 				<option value="">증분류</option>
-				<option value="1">Male</option>
-				<option value="0">Female</option>
+				<c:forEach var="division" items="${divisions }">
+					<option value="${division.division_no }">${division.division_name }</option>
+				</c:forEach>
 			</select> <select class="ui dropdown">
 				<option value="">소분류</option>
-				<option value="1">Male</option>
-				<option value="0">Female</option>
+				<c:forEach var="section" items="${sections }">
+					<option value="${section.section_no }">${section.section_name }</option>
+				</c:forEach>
 			</select>
 		</div>
 

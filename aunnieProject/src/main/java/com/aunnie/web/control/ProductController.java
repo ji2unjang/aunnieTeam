@@ -35,6 +35,11 @@ public class ProductController {
 	
 	@RequestMapping("/productDetail")
 	public ModelAndView listDetail(){
-		return new ModelAndView("pdDetail","list",service.getAll());
+		ModelAndView mv = new ModelAndView("pdDetail");
+		mv.addObject("list", service.getAll());
+		mv.addObject("categories", cs.getAll());
+		mv.addObject("divisions", ds.getAll());
+		mv.addObject("sections", ss.getAll());
+		return mv;
 	}
 }

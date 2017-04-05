@@ -22,6 +22,7 @@ public class MemberServiceImple implements MemberService{
 
 	@Override
 	public MemberDTO readOne(int no) {
+		System.out.println(dao.selectOne(no));
 		return dao.selectOne(no);
 	}
 
