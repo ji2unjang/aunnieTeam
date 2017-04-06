@@ -47,5 +47,12 @@ public class MemberOracleDAO implements MemberDAO{
 	public List<MemberDTO> selectPage(Criteria cri) {
 		return session.selectList(namespace+".selectPage",cri);
 	}
+
+	
+	@Override
+	public MemberDTO idCheck(String id) {
+		return session.selectOne("com.aunnie.member.idCheck",id);
+		
+	}
 	
 }

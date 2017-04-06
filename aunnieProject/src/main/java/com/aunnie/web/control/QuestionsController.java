@@ -1,4 +1,4 @@
-package com.aunnie.web.control;
+/*package com.aunnie.web.control;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +29,7 @@ public class QuestionsController {
 	
 	@RequestMapping("/detail")
 	public ModelAndView detail(
-			/* @RequestParam("q_no") int q_no*/ ){
+			 @RequestParam("q_no") int q_no ){
 
 		return new ModelAndView("detail", "qdto", service.readOne(1));
 
@@ -55,3 +55,4 @@ public class QuestionsController {
 
 
 }
+*/

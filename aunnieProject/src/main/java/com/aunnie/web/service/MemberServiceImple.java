@@ -45,4 +45,10 @@ public class MemberServiceImple implements MemberService{
 		return dao.selectPage(cri);
 	}
 
+	@Override
+	public MemberDTO checkId(String id) {
+		
+		return dao.idCheck(id);
+	}
+
 }

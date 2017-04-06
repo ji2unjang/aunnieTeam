@@ -17,5 +17,6 @@
 		<typeAlias type="com.aunnie.web.dto.CouponDTO" alias="coupon"/>
 
 		<typeAlias type="com.aunnie.web.dto.OrderDetailDTO" alias="orderDetail"/>
+		<typeAlias type="com.aunnie.web.dto.ReviewDTO" alias="rdto"/>
 	</typeAliases>
 </configuration>
