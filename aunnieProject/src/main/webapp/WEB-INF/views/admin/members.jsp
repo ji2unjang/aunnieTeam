@@ -65,6 +65,11 @@
 						html+="</td>";
 						html+="<td>"+entry.member_no+"</td>";
 						html+="<td>"+entry.id+"</td>";
+						html+="<td>"+entry.name+"</td>";
+						html+="<td>"+entry.email+"</td>";
+						html+="<td>"+entry.phone+"</td>";
+						html+="<td>"+entry.regdate+"</td>";
+						html+="<td>"+entry.degree+"</td>";
 						html+="</tr>";
 					});
 					$("tbody").html(html);
@@ -156,16 +161,19 @@
   </tfoot>
 </table>
  <div class="ui right floated pagination menu">
-   <a class="icon item">
-     <i class="left chevron icon"></i>
-   </a>
-   <a class="item">1</a>
-   <a class="item">2</a>
-   <a class="item">3</a>
-   <a class="item">4</a>
-   <a class="icon item">
-     <i class="right chevron icon"></i>
-   </a>
+   <c:if test="${criteria.prev==true }">
+	   <a class="icon item">
+	     <i class="left chevron icon"></i>
+	   </a>
+   </c:if>
+   <c:forEach begin="${criteria.startPage }" end="${criteria.endPage }" var="index">
+	   <a class="item">${index}</a>
+   </c:forEach>
+    <c:if test="${criteria.next==true }">
+	   <a class="icon item">
+	     <i class="right chevron icon"></i>
+	   </a>
+    </c:if>
 </div>
 </body>
 </html>

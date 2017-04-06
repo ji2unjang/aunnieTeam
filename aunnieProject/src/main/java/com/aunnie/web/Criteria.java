@@ -35,16 +35,17 @@ public class Criteria {
 		
 		startPage = (page%displayPageNum)!=0?(page/displayPageNum)*displayPageNum+1 : (page/displayPageNum);
 		endPage = startPage+displayPageNum-1;
-		prev=true;
-		next=true;
+		if(startPage <= displayPageNum) prev=false;
+		if(startPage > displayPageNum) prev=true;
+		if(endPage== totalPage) next=false;
+		if(endPage < totalPage) next=true;
 		if(endPage > totalPage){
 			endPage = totalPage;
-			prev=true;
 			next=false;
-		}else if(startPage <=0 || startPage-displayPageNum <= 0){
+		}
+		if(startPage <=0 || startPage-displayPageNum <= 0){
 			startPage = 1;
 			prev=false;
-			next=true;
 		}
 		
 		System.out.println("총 데이터 수: "+totalCount);

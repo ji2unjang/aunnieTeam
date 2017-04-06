@@ -24,9 +24,9 @@ public class MemberController {
 		Criteria cri = new Criteria();
 		// # of row per page : 10
 		// pno : current page
-		cri.setPerPageNum(5);
-		cri.setTotalCount(service.totalCount());
+		cri.setPerPageNum(10);
 		cri.setPage(pno);
+		cri.setTotalCount(service.totalCount());
 		ModelAndView model = new ModelAndView("admin/members");
 		model.addObject("list", service.getPage(cri));
 		model.addObject("criteria",cri);
