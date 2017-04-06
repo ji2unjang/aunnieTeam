@@ -13,4 +13,5 @@ public interface MemberService {
 	public void modifyOne(MemberDTO dto);
 	public void removeOne(int no);
 	public int totalCount();
+	public MemberDTO findUser(MemberDTO memberDto);
 }

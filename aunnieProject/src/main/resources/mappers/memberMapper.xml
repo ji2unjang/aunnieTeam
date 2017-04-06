@@ -32,4 +32,15 @@
 	<delete id="deleteOne" parameterType="int">
 		DELETE MEMBER WHERE member_no=#{member_no}
 	</delete>
+	
+	<select id="findUser" resultType="member" parameterType="member">
+		SELECT 
+			member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
+		WHERE 
+			id= #{id}
+	<if test="pw != null and pw != ''">
+			AND pw = #{pw}
+	</if>
+	</select>
+	
   </mapper>

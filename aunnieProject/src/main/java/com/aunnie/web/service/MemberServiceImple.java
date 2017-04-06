@@ -50,5 +50,8 @@ public class MemberServiceImple implements MemberService{
 	public int totalCount() {
 		return dao.getTotal();
 	}
+	public MemberDTO findUser(MemberDTO memberdto) {
+		return dao.findUser(memberdto);
+	}
 
 }

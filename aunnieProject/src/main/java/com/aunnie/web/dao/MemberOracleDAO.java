@@ -52,6 +52,7 @@ public class MemberOracleDAO implements MemberDAO{
 	public int getTotal() {
 		return session.selectOne(namespace+".getCount");
 	}
-	
-	
+	public MemberDTO findUser(MemberDTO memberDto) {
+		return session.selectOne(namespace+".findUser", memberDto);
+	}
 }
