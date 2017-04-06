@@ -25,7 +25,7 @@ public class MemberOracleDAO implements MemberDAO{
 
 	@Override
 	public MemberDTO selectOne(int no) {
-		return session.selectOne(namespace+".selectOne");
+		return session.selectOne(namespace+".selectOne",no);
 	}
 
 	@Override

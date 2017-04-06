@@ -8,7 +8,7 @@
 	</select>
 	<select id="selectOne" resultType="member" parameterType="int">
 		select member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree from member
-		where member_no=#{member_no}
+		where member_no=#{member_no,jdbcType=INTEGER}
 	</select>
 	<select id="selectPage" resultType="member" parameterType="criteria">
 		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree

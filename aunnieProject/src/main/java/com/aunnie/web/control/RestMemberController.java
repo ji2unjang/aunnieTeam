@@ -23,8 +23,8 @@ public class RestMemberController {
 	
 	@RequestMapping("/server01")
 	@ResponseBody
-	public List<MemberDTO> search(@RequestParam int no){
-		System.out.println(no);
+	public List<MemberDTO> search(@RequestParam(name="no") int no){
+		System.out.println("no::"+no);
 		List<MemberDTO> list= new ArrayList<>();
 		list.add(service.readOne(no));
 		return list;

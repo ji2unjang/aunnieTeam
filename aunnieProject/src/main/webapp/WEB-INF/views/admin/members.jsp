@@ -21,51 +21,59 @@
 		
 		/* 검색 카테고리 */
 		$('.ui.dropdown').dropdown();
-		$(".ui.icon.input").on("click",function(){
-			console.log("click");
-		})
+		
 		/* 카테고리 뭐 선택했는지 검색창에 placeholder로 뜨게 하기 */
 		$("#searchField").on("change", function(){
 			var sel = $("#searchField").val();
 			$("#searchText").attr("placeholder", sel);
 		});
 		
-		$("#searchText").keydown(function(){
+		/* 아이콘 눌렸을때  */
+		$("i.icon.search").on("click",function(){
 			var input = $("#searchText").val();
 			var sel = $("#searchField").val();
-			if(event.keyCode==13){
-				if(sel=="회원번호"){
-					$.ajax({
-						url:'server01',
-						type:'POST',	// 겟방식으로 해; post
-						data:{
-							no:input // 전달할 데이터
-						},
-						//dataType:"text",
-						success: function(object){
-							var html="";
-							$.each(object,function(index,entry){
-								console.log("index:"+index);
-								html+="<tr>";
-								html+="<td class='collapsing'>";
-								html+="<div class='ui fitted checkbox'>";
-								html+="<input type='checkbox'> <label></label>";
-								html+="</div>";
-								html+="</td>";
-								html+="<td>"+entry.member_no+"</td>";
-								html+="<td>"+entry.id+"</td>";
-								html+="</tr>";
-							});
-							$("tbody").html(html);
-						},
-						error: function(){
-							alert("실패");
-						}
-					})
+			if(sel=="회원번호"){searchByNumber(input);}
+		});
+		// Enter.
+		$("#searchText").keydown(function(){
+				if(event.keyCode==13){
+					var input = $("#searchText").val();
+					var sel = $("#searchField").val();
+					if(sel=="회원번호"){searchByNumber(input);}
 				}
-			}
-		})
+		});
 		
+		// Search member by member_no
+		function searchByNumber(number){
+			console.log("number: "+number);
+			$.ajax({
+				type:'POST',
+				data:{
+					no:number
+				},
+				url:"server01",
+				success:function(object){
+					console.log("object::"+object);
+					var html="";
+					$.each(object,function(index,entry){
+						console.log("index:"+index);
+						html+="<tr>";
+						html+="<td class='collapsing'>";
+						html+="<div class='ui fitted checkbox'>";
+						html+="<input type='checkbox'> <label></label>";
+						html+="</div>";
+						html+="</td>";
+						html+="<td>"+entry.member_no+"</td>";
+						html+="<td>"+entry.id+"</td>";
+						html+="</tr>";
+					});
+					$("tbody").html(html);
+				},
+				error: function(){
+					alert("Fail! ");
+				}
+			});
+		}
 	});
 </script>
 </head>
@@ -80,18 +88,6 @@
 	<div class="six column centered row">
 		<!-- 검색카테고리 그리드 -->
 		<div class="column">
-	    	<!-- <div class="ui fluid search selection dropdown" id="searchField">
-	          <input name="serch" type="hidden">
-	          <i class="dropdown icon"></i>
-	          <div class="default text">검색항목</div>
-	          <div class="menu">
-	              <div class="item" data-value="0">회원번호</div>
-	              <div class="item" data-value="1">아이디</div>
-	              <div class="item" data-value="2">이름</div>
-	              <div class="item" data-value="3">등급</div>
-	          </div>
-			</div> -->
-	
 	    	<select name="searchField" id="searchField" class="ui fluid search selection dropdown">
 		      	<option selected disabled>검색 분야 선택</option>
 		      	<option value="회원번호">회원번호</option>
@@ -100,11 +96,8 @@
 		      	<option value="등급">등급</option>
 			</select>
     	</div>	<!-- 검색카테고리 그리드 끝 -->
-    	
     	<!-- 검색창 -->
 	    <div class="column">
-			<!-- <input type="text" name="searchText" id="searchText" /> 
-			<i class="search icon" id="searchIcon"></i>	 -->
 			<div class="ui search">
 			  <div class="ui icon input">
 			    <input class="prompt" type="text" placeholder="검색" value="" id="searchText"> 
