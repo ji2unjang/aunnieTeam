@@ -11,14 +11,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/components/grid.min.css">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-</head>
-
+<style type="text/css">
+.ui.icon.input>i.icon:not(.link) {
+    pointer-events: visiblepainted;
+}
+</style>
 <script type="text/javascript">
 	$(function(){
 		
 		/* 검색 카테고리 */
 		$('.ui.dropdown').dropdown();
-		
+		$(".ui.icon.input").on("click",function(){
+			console.log("click");
+		})
 		/* 카테고리 뭐 선택했는지 검색창에 placeholder로 뜨게 하기 */
 		$("#searchField").on("change", function(){
 			var sel = $("#searchField").val();
@@ -37,14 +42,21 @@
 							no:input // 전달할 데이터
 						},
 						//dataType:"text",
-						success: function(data){
-							console.log(data);
-							/* var dataArray = data.trim().split(",");
-							for(var i = 0; i<dataArray.length; i++){
-								var str = dataArray[i];
-								var txt = "<li>"+str+"</li>";
-								$("ul").append(txt);
-							} */
+						success: function(object){
+							var html="";
+							$.each(object,function(index,entry){
+								console.log("index:"+index);
+								html+="<tr>";
+								html+="<td class='collapsing'>";
+								html+="<div class='ui fitted checkbox'>";
+								html+="<input type='checkbox'> <label></label>";
+								html+="</div>";
+								html+="</td>";
+								html+="<td>"+entry.member_no+"</td>";
+								html+="<td>"+entry.id+"</td>";
+								html+="</tr>";
+							});
+							$("tbody").html(html);
 						},
 						error: function(){
 							alert("실패");
@@ -55,9 +67,8 @@
 		})
 		
 	});
-	
 </script>
-
+</head>
 <body>
 
 	<div>
