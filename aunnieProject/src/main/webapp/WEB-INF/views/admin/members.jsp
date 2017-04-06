@@ -26,15 +26,15 @@
 		});
 		
 		$("#searchText").keydown(function(){
-			var txt1 = $("#searchText").val();
+			var input = $("#searchText").val();
 			var sel = $("#searchField").val();
 			if(event.keyCode==13){
 				if(sel=="회원번호"){
 					$.ajax({
 						url:'server01',
-						type:'get',	// 겟방식으로 해; post
+						type:'POST',	// 겟방식으로 해; post
 						data:{
-							no:35 // 전달할 데이터
+							no:input // 전달할 데이터
 						},
 						//dataType:"text",
 						success: function(data){
@@ -103,7 +103,6 @@
 		</div>
 	</div>
 </div>
-
 <table class="ui compact celled definition table">
   <thead class="full-width">
     <tr>

@@ -25,7 +25,8 @@ public class RestMemberController {
 	@ResponseBody
 	public List<MemberDTO> search(@RequestParam int no){
 		System.out.println(no);
-		
-		return service.getAll();
+		List<MemberDTO> list= new ArrayList<>();
+		list.add(service.readOne(no));
+		return list;
 	}
 }
