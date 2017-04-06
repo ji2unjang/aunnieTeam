@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/css/uikit.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit-icons.min.js"></script>
-
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -47,7 +46,7 @@
 </style>
 </head>
 <body>
-<form action="longinOk">
+<form action="loginOk">
 	<div class="row" id="all">
 		<div class="divLable">
 			<label>Who's there?</label>
@@ -57,14 +56,14 @@
 				<div class="uk-margin">
 			        <div class="uk-inline">
 			            <span class="uk-form-icon" data-uk-icon="icon: user"></span>
-						<input class="uk-input uk-form-width-medium" type="text" name="email" id="email" placeholder="Email"/>
+						<input class="uk-input uk-form-width-medium" type="text" name="id" id="id" placeholder="id"/>
 			        </div>
 		    	</div>
 			
 				<div class="uk-margin">
 			        <div class="uk-inline">
 			            <span class="uk-form-icon" data-uk-icon="icon: lock"></span>
-						<input class="uk-input uk-form-width-medium" type="text" name="password" id="password" placeholder="Password"/>
+						<input class="uk-input uk-form-width-medium" type="text" name="pw" id="pw" placeholder="pw"/>
 			        </div>
 		   		</div>
 			</div>

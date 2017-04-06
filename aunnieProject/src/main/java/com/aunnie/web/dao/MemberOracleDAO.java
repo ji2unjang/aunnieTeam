@@ -25,7 +25,7 @@ public class MemberOracleDAO implements MemberDAO{
 
 	@Override
 	public MemberDTO selectOne(int no) {
-		return session.selectOne(namespace+".selectOne");
+		return session.selectOne(namespace+".selectOne",no);
 	}
 
 	@Override
@@ -47,12 +47,17 @@ public class MemberOracleDAO implements MemberDAO{
 	public List<MemberDTO> selectPage(Criteria cri) {
 		return session.selectList(namespace+".selectPage",cri);
 	}
-
-	
 	@Override
 	public MemberDTO idCheck(String id) {
 		return session.selectOne("com.aunnie.member.idCheck",id);
 		
 	}
-	
+	@Override
+	public int getTotal() {
+		return session.selectOne(namespace+".getCount");
+	}
+	@Override
+	public MemberDTO findUser(MemberDTO memberDto) {
+		return session.selectOne(namespace+".findUser", memberDto);
+	}
 }

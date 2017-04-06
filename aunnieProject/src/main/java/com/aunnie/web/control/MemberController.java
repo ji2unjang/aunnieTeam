@@ -3,11 +3,13 @@ package com.aunnie.web.control;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.aunnie.web.Criteria;
 import com.aunnie.web.dto.MemberDTO;
 import com.aunnie.web.service.MemberService;
 
@@ -18,12 +20,26 @@ public class MemberController {
 	private MemberService service;
 
 	@RequestMapping("/memberList")
-	public ModelAndView list() {
-		return new ModelAndView("list", "list", service.getAll());
+	public ModelAndView list(@RequestParam(name="pno",defaultValue="1") int pno) {
+		Criteria cri = new Criteria();
+		// # of row per page : 10
+		// pno : current page
+		cri.setPerPageNum(10);
+		cri.setPage(pno);
+		cri.setTotalCount(service.totalCount());
+		ModelAndView model = new ModelAndView("admin/members");
+		model.addObject("list", service.getPage(cri));
+		model.addObject("criteria",cri);
+		return model;
+
 	}
 
+	@RequestMapping("/adminLog")
+	public String adminLogin(){
+		return "login";
+	}
 	@RequestMapping("/sign")
-	public String sign() {
+	public String sing() {
 		return "sign";
 	}
 
@@ -33,17 +49,30 @@ public class MemberController {
 			) {
 		System.out.println("Birthday: "+dto.getBirthday());
 		System.out.println("여기 왔다감");
-
-		service.writeOne(dto);
-	
-	return "redirect:/memberList";
+		return "redirect:/memberList";
 	}
 	
 	@RequestMapping("/idCheckOk")
 	public ModelAndView idCheckOk(@RequestParam("id")String id){
 		System.out.println(id);
 		
-	return new ModelAndView("sign", "id", service.checkId(id));
+		return new ModelAndView("sign", "id", service.checkId(id));
 	}
 		
+
+	@RequestMapping("/login")
+	public String login(){
+		return "login";
+	}
+	
+	@RequestMapping("/loginOk")
+	public String loginOk(MemberDTO memberdto, Model model){
+		MemberDTO resultMemberdto = service.findUser(memberdto);
+		if(resultMemberdto != null && !"".equals(resultMemberdto)){
+			model.addAttribute("list", resultMemberdto);
+			return "loginOk";
+		}else{
+			return "login";
+		}
+	}
 }

@@ -22,6 +22,7 @@ public class MemberServiceImple implements MemberService{
 
 	@Override
 	public MemberDTO readOne(int no) {
+		System.out.println(dao.selectOne(no));
 		return dao.selectOne(no);
 	}
 
@@ -47,8 +48,14 @@ public class MemberServiceImple implements MemberService{
 
 	@Override
 	public MemberDTO checkId(String id) {
-		
 		return dao.idCheck(id);
+	}
+	@Override
+	public int totalCount() {
+		return dao.getTotal();
+	}
+	public MemberDTO findUser(MemberDTO memberdto) {
+		return dao.findUser(memberdto);
 	}
 
 }
