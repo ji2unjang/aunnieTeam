@@ -30,28 +30,26 @@
 		// 카테고리별 분류
 	 	$("#cate").on("change",function(){
 			var cate = $("#cate").val();
-				//cate_no(cate);
+				cate_no(cate);
 				console.log(cate);
 		});
-/*  		function cate_no(cate){
+		
+		function cate_no(cate){
 			console.log(cate);
 			$.ajax({
 				type:'POST',
 				data:{
-					no:cate 
+					no:cate
 				},
 				url:"category_no_division",
-				
 				success:function(object){
 					console.log(object)
-				}
-				
+				},
 				error:function(){
-					alert("cate_no_fail");
+					alert("실패");
 				}
 			});
-		
-	}  */
+		}
 	});
 	
 </script>

@@ -20,7 +20,7 @@ public class CategoryServiceImple implements CategoryService {
 	}
 
 	@Override
-	public List<CategoryDTO> getOne(int no) {
+	public CategoryDTO getOne(int no) {
 		return dao.selectOne(no);
 	}
 

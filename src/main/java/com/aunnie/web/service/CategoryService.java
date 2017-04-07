@@ -5,7 +5,7 @@ import com.aunnie.web.dto.CategoryDTO;
 
 public interface CategoryService {
 	public List<CategoryDTO> getAll();
-	public List<CategoryDTO> getOne(int no);
+	public CategoryDTO getOne(int no);
 	public void writeOne(CategoryDTO dto);
 	public void modifyOne(CategoryDTO dto);
 	public void deleteOne(int no);
