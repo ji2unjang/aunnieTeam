@@ -33,7 +33,7 @@
 				//cate_no(cate);
 				console.log(cate);
 		});
- 		function cate_no(cate){
+/*  		function cate_no(cate){
 			console.log(cate);
 			$.ajax({
 				type:'POST',
@@ -51,7 +51,7 @@
 				}
 			});
 		
-	} 
+	}  */
 	});
 	
 </script>
