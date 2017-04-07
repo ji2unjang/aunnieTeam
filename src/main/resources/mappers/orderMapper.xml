@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.aunnie.order">
+	<select id="selectAll" resultType="order">
+		select order_no,order_date,order_status,used_mileage,member_no,coupon_no
+		from orders
+	</select>
+	
+	<select id="selectOne" resultType="order" parameterType="int">
+		select order_no,order_date,order_status,used_mileage,member_no,coupon_no
+		from orders
+		where order_no=#{order_no}
+	</select>
+	
+	<insert id="insert" parameterType="order">
+		insert into orders
+		values(seq_order_no.nextval,#{order_date},#{order_status},#{used_mileage},#{member_no},#{coupon_no})
+	</insert>
+	
+	<update id="update" parameterType="order">
+		update orders
+		set order_status=#{order_status},used_mileage=#{used_mileage}
+		where order_no=#{order_no}
+	
+	
+	</update>
+	
+	<delete id="delete" parameterType="int" > 
+		delete from orders
+		where order_no=#{order_no}
+	</delete>
+	
+	
+	
+  </mapper>

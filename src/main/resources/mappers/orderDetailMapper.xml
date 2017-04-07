@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.aunnie.orderDetail">
+  	<select id="selectAll" resultType="orderDetail">
+  		select order_no,product_no,option_no,p_amount,recipient,recipient_tel,shipp_address,order_detail_no
+		from order_detail  	
+  	</select>
+  	
+  	<select id="selectOne" resultType="orderDetail" parameterType="int">
+  		select order_no,product_no,option_no,p_amount,recipient,recipient_tel,shipp_address,order_detail_no
+  		from order_detail
+  		where order_no=#{order_no}
+  	</select>
+  	
+  	<insert id="insetOne" parameterType="orderDetail">
+  		insert into order_detail
+  		values(seq_orderdetail_no.nextval,#{product_no},#{option_no},
+  		#{p_amount},#{recipient},#{recipient_tel},#{shipp_address},
+  		#{order_detail_no})
+  	</insert>
+  	
+  	<update id="update" parameterType="orderDetail">
+  		update order_detail
+  		set recipient=#{recipient},shipp_address=#{shipp_address}
+  		where order_no=#{order_no}
+  	</update>
+  	
+  
+  	<delete id="delete" parameterType="int">
+  		delete from order_detail
+  		where order_no=#{order_no}
+  	</delete>
+  
+  </mapper>

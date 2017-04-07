@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+ul li{
+  display: inline;
+}
+
+body{
+	background:white;
+}
+
+
+.header_logo {
+	width:50%;
+	
+}
+#searchbar {
+	margin: auto;
+	border: 2px solid #ec488c;
+	height: 10%;
+	display:inline-block;
+	min-width:100%;
+	margin-top:10%;
+}
+
+#searchbar input[type=text] {
+	display: inline;
+	border-style: none;
+	width: 95%;
+	padding: 5px;
+	text-indent: 30px;
+	height: 40px;
+	font-size: 1em;
+}
+
+.ui.input{
+	width:100%;
+}
+
+.ui.nput i{
+	color:#ec488c;
+}
+
+#menuList .item{
+	font-size:1.2rem;
+	padding-right:2%;
+	padding-left:2%;
+}
+#menuList .item .menu .item{
+	font-size:0.8rem;
+}
+
+.bar{
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.ui.menu .item .menu a.item:hover{
+	color:#ec488c;
+	background-color:white;
+}
+.ui.link.menu .menu>.item:hover, .ui.link.menu>.item:hover, .ui.menu .menu>.link.item:hover, .ui.menu .menu>a.item:hover, .ui.menu>.link.item:hover, .ui.menu>a.item:hover{
+		color:#ec488c;
+	background-color:white;
+}
+
+
