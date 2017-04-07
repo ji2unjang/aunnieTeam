@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,28 @@
 	        changeYear: true,
 			changeMonth: true 
 		});
+		
+		// 카테고리별 분류
+		$("#cate").on("change",function(){
+			var cate = $("#cate").val();
+				cate_no(cate);
+		});
+		function cate_no(cate){
+			console.log(cate);
+			$.ajax({
+				type:'POST',
+				data:{
+					no:cate
+				},
+				url:"category_no_division",
+				error:function(){
+					alert("cate_no_fail");
+				}
+			});
+		
+	}
 	});
+	
 </script>
 </head>
 <body>
@@ -104,10 +125,11 @@
 		<div class="five wide column">
 			<div class="field">
 				<label>카테고리</label>
-				<select class="ui dropdown">
+				<select class="ui dropdown" id="cate">
 					<option value="">대분류</option>
-					<option>데이터는</option>
-					<option>내일 넣겠다.</option>
+					<c:forEach var="category" items="${categories }">
+					<option value="${category.category_no }">${category.category_name }</option>
+					</c:forEach>
 				</select>
 			</div>
 		</div>
@@ -116,8 +138,10 @@
 				<label>　</label>
 				<select class="ui dropdown">
 					<option value="">중분류</option>
-					<option>데이터는</option>
-					<option>내일 넣겠다.</option>
+					<c:forEach var="division" items="${divisions }">
+							<option value="${division.division_no }">${division.division_name }</option>
+						
+					</c:forEach>							
 				</select>
 			</div>
 		</div>
@@ -126,8 +150,9 @@
 				<label>　</label>
 				<select class="ui dropdown">
 					<option value="">소분류</option>
-					<option>데이터는</option>
-					<option>내일 넣겠다.</option>
+					<c:forEach var="section" items="${sections }">
+					<option value="${section.section_no }">${section.section_name }</option>
+					</c:forEach>
 				</select>
 			</div>
 		</div>
