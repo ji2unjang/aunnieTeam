@@ -29,13 +29,21 @@
 		UPDATE MEMBER SET id=#{id},pw=#{pw},name=#{name},nickname=#{nickname},email=#{email},phone=#{phone},address=#{address},
 		birthday=#{birthday},regdate=#{regdate},mileage=#{mileage},total_price=#{total_price},degree=#{degree}
 	</update>
+	
 	<delete id="deleteOne" parameterType="int">
 		DELETE MEMBER WHERE member_no=#{member_no}
 	</delete>
+	
 	<select id="idCheck" resultType="member" parameterType="String">
-		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
+		SELECT id FROM MEMBER
 		WHERE id= #{id}
 	</select>
+	
+	<select id="nickCheck" resultType="member" parameterType="String">
+		SELECT nickname FROM MEMBER
+		WHERE nickname= #{nickname}
+	</select>
+	
 	<select id="findUser" resultType="member" parameterType="member">
 		SELECT 
 			member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER

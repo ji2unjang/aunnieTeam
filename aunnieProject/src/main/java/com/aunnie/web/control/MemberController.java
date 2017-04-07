@@ -47,18 +47,11 @@ public class MemberController {
 	public String signOk(
 			@ModelAttribute("dto") MemberDTO dto
 			) {
-		System.out.println("Birthday: "+dto.getBirthday());
-		System.out.println("여기 왔다감");
-		return "redirect:/memberList";
-	}
-	
-	@RequestMapping("/idCheckOk")
-	public ModelAndView idCheckOk(@RequestParam("id")String id){
-		System.out.println(id);
 		
-		return new ModelAndView("sign", "id", service.checkId(id));
-	}
+			service.writeOne(dto);
 		
+		return "redirect:/sign";
+	}
 
 	@RequestMapping("/login")
 	public String login(){

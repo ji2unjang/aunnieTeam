@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.aunnie.web.dto.MemberDTO;
 import com.aunnie.web.service.MemberService;
@@ -28,5 +29,18 @@ public class RestMemberController {
 		List<MemberDTO> list= new ArrayList<>();
 		list.add(service.readOne(no));
 		return list;
+	}
+	
+	@RequestMapping("/idCheckOk")
+	@ResponseBody
+	public boolean idCheckOk(@RequestParam("id")String id){
+		return service.checkId(id);
+	}
+	@RequestMapping("/nickCheckOk")
+	@ResponseBody
+	public boolean nickCheckOk(@RequestParam("nickname")String nickname){
+		System.out.println(nickname);
+		System.out.println(service.checkNick(nickname));
+		return service.checkNick(nickname);
 	}
 }

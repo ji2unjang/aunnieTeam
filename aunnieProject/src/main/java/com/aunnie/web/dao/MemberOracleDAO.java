@@ -48,9 +48,14 @@ public class MemberOracleDAO implements MemberDAO{
 		return session.selectList(namespace+".selectPage",cri);
 	}
 	@Override
-	public MemberDTO idCheck(String id) {
-		return session.selectOne("com.aunnie.member.idCheck",id);
-		
+	public boolean idCheck(String id) {
+		if(session.selectOne("com.aunnie.member.idCheck",id)==null) return true;
+		return false;
+	}
+	@Override
+	public boolean nickCheck(String nickname) {
+		if(session.selectOne("com.aunnie.member.nickCheck",nickname)==null) return true;
+		return false;
 	}
 	@Override
 	public int getTotal() {
@@ -60,4 +65,6 @@ public class MemberOracleDAO implements MemberDAO{
 	public MemberDTO findUser(MemberDTO memberDto) {
 		return session.selectOne(namespace+".findUser", memberDto);
 	}
+
+	
 }

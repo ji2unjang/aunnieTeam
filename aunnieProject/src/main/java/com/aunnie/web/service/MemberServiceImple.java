@@ -47,9 +47,15 @@ public class MemberServiceImple implements MemberService{
 	}
 
 	@Override
-	public MemberDTO checkId(String id) {
+	public boolean checkId(String id) {
 		return dao.idCheck(id);
 	}
+	
+	@Override
+	public boolean checkNick(String nickname) {
+		return dao.nickCheck(nickname);
+	}
+	
 	@Override
 	public int totalCount() {
 		return dao.getTotal();
@@ -57,5 +63,7 @@ public class MemberServiceImple implements MemberService{
 	public MemberDTO findUser(MemberDTO memberdto) {
 		return dao.findUser(memberdto);
 	}
+
+	
 
 }

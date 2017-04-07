@@ -12,7 +12,8 @@ public interface MemberService {
 	public void writeOne(MemberDTO dto);
 	public void modifyOne(MemberDTO dto);
 	public void removeOne(int no);
-	public MemberDTO checkId(String id);
+	public boolean checkId(String id);
+	public boolean checkNick(String nickname);
 	public int totalCount();
 	public MemberDTO findUser(MemberDTO memberDto);
 }
