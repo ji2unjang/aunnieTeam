@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+
+#pdTable{
+	border:none ;	
+}
+#pdTable tr td{
+	border:none !important;
+}
+
+#buttonSeg{
+	padding:0 !important;
+}
+.ui.tabular.menu+.bottom.attached.segment, .ui.tabular.menu~.bottom.attached.segment+.bottom.attached.segment{
+	border-left:none;
+	border-right:none;
+}
+
+.ui.comments{
+	max-width:none !important;
+}
+
+#reviewDiv{
+	width:70%;
+	margin:0 auto;
+}

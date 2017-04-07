@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 	<mapper namespace="com.aunnie.payment">
+		<select id="selectAll" resultType="payment">
+			select payment_no,payment_date,payment_pay,payment_type,order_no
+			from payment
+		</select>
+		
+		<select id="selectOne" resultType="payment" parameterType="int">
+		select payment_no,payment_date,payment_pay,payment_type,order_no
+		from payment
+		where payment_no=#{payment_no}
+		</select>
+		
+		<insert id="insertOne" parameterType="payment">
+			insert into payment
+			set values(seq_payment_no.nextval,#{payment_date},#{payment_pay},#{payment_type},#{order_no})
+		</insert>
+		
+		<update id="update" parameterType="payment">
+			update payment
+			set payment_pay=#{payment_pay},payment_type=#{payment_type}
+			where payment_no=#{payment_no}
+		</update>
+		
+		<delete id="deleteOne" parameterType="int">
+			delete from payment
+			where payment_no=#{payment_no}
+		</delete>
+	
+ 	</mapper>

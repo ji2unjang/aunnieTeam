@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.aunnie.member">
+	<select id="selectAll" resultType="member">
+		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
+	</select>
+	<select id="selectOne" resultType="member" parameterType="int">
+		select member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree from member
+		where member_no=#{member_no,jdbcType=INTEGER}
+	</select>
+	<select id="selectPage" resultType="member" parameterType="criteria">
+		SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree
+		FROM 
+		(SELECT rownum rn,member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree 
+			FROM (SELECT member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER order by member_no desc)
+				WHERE rownum &lt;=#{endNo})
+		WHERE rn&gt;=#{startNo}
+	</select>
+	<select id="getCount" resultType="int">
+		SELECT COUNT(*) cnt FROM MEMBER
+	</select>
+	<insert id="insertOne" parameterType="member">
+		INSERT INTO MEMBER VALUES(seq_member_no.nextval,#{id},#{pw},#{name},#{nickname},#{email},#{phone},#{address},
+		#{birthday},sysdate,0,0,'D')
+	</insert>
+	<update id="updateOne" parameterType="member">
+		UPDATE MEMBER SET id=#{id},pw=#{pw},name=#{name},nickname=#{nickname},email=#{email},phone=#{phone},address=#{address},
+		birthday=#{birthday},regdate=#{regdate},mileage=#{mileage},total_price=#{total_price},degree=#{degree}
+	</update>
+	
+	<delete id="deleteOne" parameterType="int">
+		DELETE MEMBER WHERE member_no=#{member_no}
+	</delete>
+	
+	<select id="idCheck" resultType="member" parameterType="String">
+		SELECT id FROM MEMBER
+		WHERE id= #{id}
+	</select>
+	
+	<select id="nickCheck" resultType="member" parameterType="String">
+		SELECT nickname FROM MEMBER
+		WHERE nickname= #{nickname}
+	</select>
+	
+	<select id="findUser" resultType="member" parameterType="member">
+		SELECT 
+			member_no,id,pw,name,nickname,email,phone,address,birthday,regdate,mileage,total_price,degree FROM MEMBER
+		WHERE 
+			id= #{id}
+	<if test="pw != null and pw != ''">
+			AND pw = #{pw}
+	</if>
+	</select>
+  </mapper>
