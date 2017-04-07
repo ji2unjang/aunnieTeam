@@ -21,7 +21,7 @@ public class CategoryOracleDAO implements CategoryDAO{
 	}
 
 	@Override
-	public CategoryDTO selectOne(int no) {
+	public List<CategoryDTO> selectOne(int no) {
 		return session.selectOne(namespace+".selectOne",no );
 	}
 

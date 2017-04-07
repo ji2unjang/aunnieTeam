@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +28,12 @@
 		});
 		
 		// 카테고리별 분류
-		$("#cate").on("change",function(){
+	 	$("#cate").on("change",function(){
 			var cate = $("#cate").val();
-				cate_no(cate);
+				//cate_no(cate);
+				console.log(cate);
 		});
-		function cate_no(cate){
+ 		function cate_no(cate){
 			console.log(cate);
 			$.ajax({
 				type:'POST',
@@ -40,12 +41,17 @@
 					no:cate
 				},
 				url:"category_no_division",
+				
+				success:function(object){
+					console.log(object)
+				}
+				
 				error:function(){
 					alert("cate_no_fail");
 				}
 			});
 		
-	}
+	} 
 	});
 	
 </script>
@@ -128,7 +134,7 @@
 				<select class="ui dropdown" id="cate">
 					<option value="">대분류</option>
 					<c:forEach var="category" items="${categories }">
-					<option value="${category.category_no }">${category.category_name }</option>
+						<option value="${category.category_no }">${category.category_name }</option>
 					</c:forEach>
 				</select>
 			</div>
