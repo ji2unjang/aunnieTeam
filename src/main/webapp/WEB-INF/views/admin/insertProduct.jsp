@@ -38,7 +38,7 @@
 			$.ajax({
 				type:'POST',
 				data:{
-					no:cate
+					no:cate 
 				},
 				url:"category_no_division",
 				
